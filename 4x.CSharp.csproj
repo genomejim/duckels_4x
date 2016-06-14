@@ -69,7 +69,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BanditMove.cs" />
     <Compile Include="Assets\ExplorerMovement.cs" />
+    <Compile Include="Assets\MapTile.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
