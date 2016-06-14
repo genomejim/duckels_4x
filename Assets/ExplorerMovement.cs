@@ -3,13 +3,16 @@ using System.Collections;
 
 public class ExplorerMovement : MonoBehaviour
 {
-
+    public int TurnNumber;
     bool new_turn;
+    public UnityEngine.UI.Text TurnNumberText;
     // Use this for initialization
     void Start()
     {
         Debug.Log("Debug String");
         new_turn = true;
+        TurnNumberText.text = "1";
+        TurnNumber = 1;
     }
 
     // Update is called once per frame
@@ -24,9 +27,12 @@ public class ExplorerMovement : MonoBehaviour
         float movex = Input.GetAxis("Horizontal");
         float movey = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.N))
+        if (Input.GetKey(KeyCode.N) && !(new_turn))
         {
             new_turn = true;
+            TurnNumber += 1;
+            // TurnNumberText = GameObject.Find("TurnNumber").GetComponent<UnityEngine.UI.Text>();
+            TurnNumberText.text = TurnNumber.ToString();
         }
         
         float move = 2.55f;
